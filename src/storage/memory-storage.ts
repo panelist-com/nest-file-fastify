@@ -7,6 +7,7 @@ import { StorageFile, Storage } from "./storage";
 
 export interface MemoryStorageFile extends StorageFile {
   buffer: Buffer;
+  originalFilename: string;
 }
 
 export class MemoryStorage implements Storage<MemoryStorageFile> {
@@ -20,6 +21,7 @@ export class MemoryStorage implements Storage<MemoryStorageFile> {
 
     return {
       buffer,
+      originalFilename: file.filename,
       size: buffer.length,
       encoding,
       mimetype,
