@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NPM_REGISTRY: registry.npmjs.org/
-      NPM_SCOPE: blazity
+      NPM_SCOPE: panelist
 
     steps:
       - uses: actions/checkout@v2
