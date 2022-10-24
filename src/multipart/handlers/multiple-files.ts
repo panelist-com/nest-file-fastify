@@ -11,7 +11,7 @@ export const handleMultipartMultipleFiles = async (
   req: FastifyRequest,
   fieldname: string,
   maxCount: number,
-  options: UploadOptions,
+  options: UploadOptions | Partial<UploadOptions>,
 ) => {
   const parts = getParts(req, options);
   const body: Record<string, any> = {};

@@ -15,7 +15,7 @@ export type UploadFilterHandler = (
 ) => Promise<boolean | string> | boolean | string;
 
 export const filterUpload = async (
-  uploadOptions: UploadOptions,
+  uploadOptions: UploadOptions | Partial<UploadOptions>,
   req: FastifyRequest,
   file: UploadFilterFile,
 ): Promise<boolean> => {

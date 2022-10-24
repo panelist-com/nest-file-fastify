@@ -18,10 +18,10 @@ import {
 
 export function FileFieldsInterceptor(
   uploadFields: UploadField[],
-  options?: UploadOptions,
+  options?: UploadOptions | Partial<UploadOptions>,
 ): Type<NestInterceptor> {
   class MixinInterceptor implements NestInterceptor {
-    private readonly options: UploadOptions;
+    private readonly options: UploadOptions | Partial<UploadOptions>;
 
     private readonly fieldsMap: Map<string, UploadFieldMapEntry>;
 

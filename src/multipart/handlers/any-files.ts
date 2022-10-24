@@ -5,10 +5,11 @@ import { StorageFile } from "../../storage";
 import { getParts } from "../request";
 import { removeStorageFiles } from "../file";
 import { filterUpload } from "../filter";
+import { MultipartFile } from "../file";
 
 export const handleMultipartAnyFiles = async (
   req: FastifyRequest,
-  options: UploadOptions,
+  options: UploadOptions | Partial<UploadOptions>,
 ) => {
   const parts = getParts(req, options);
   const body: Record<string, any> = {};
@@ -20,7 +21,7 @@ export const handleMultipartAnyFiles = async (
   };
 
   try {
-    for await (const part of parts) {
+    for await (const part of parts as AsyncIterableIterator<MultipartFile>) {
       if (part.file) {
         const file = await options.storage!.handleFile(part, req);
 

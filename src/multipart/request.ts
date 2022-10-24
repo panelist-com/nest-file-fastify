@@ -27,7 +27,10 @@ export const getMultipartRequest = (ctx: HttpArgumentsHost) => {
   return req;
 };
 
-export const getParts = (req: FastifyRequest, options: UploadOptions) => {
+export const getParts = (
+  req: FastifyRequest,
+  options: UploadOptions | Partial<UploadOptions>,
+) => {
   return req.parts(options) as MultipartsIterator;
 };
 

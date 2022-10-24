@@ -33,7 +33,7 @@ export const uploadFieldsToMap = (uploadFields: UploadField[]) => {
 export const handleMultipartFileFields = async (
   req: FastifyRequest,
   fieldsMap: Map<string, UploadFieldMapEntry>,
-  options: UploadOptions,
+  options: UploadOptions | Partial<UploadOptions>,
 ) => {
   const parts = getParts(req, options);
   const body: Record<string, any> = {};

@@ -13,10 +13,10 @@ import { handleMultipartSingleFile } from "../multipart/handlers/single-file";
 
 export function FileInterceptor(
   fieldname: string,
-  options?: UploadOptions,
+  options?: UploadOptions | Partial<UploadOptions>,
 ): Type<NestInterceptor> {
   class MixinInterceptor implements NestInterceptor {
-    private readonly options: UploadOptions;
+    private readonly options: UploadOptions | Partial<UploadOptions>;
 
     constructor() {
       this.options = transformUploadOptions(options);

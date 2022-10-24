@@ -1,5 +1,5 @@
 <div align="left">
-  <h1> fastify-multipart for Nest.js</h1>
+  <h1> @fastify/multipart for Nest.js</h1>
 
 [![Github Actions](https://img.shields.io/github/workflow/status/blazity/nest-file-fastify/Build?style=flat-square)](https://github.com/Blazity/nest-file-fastify)
 [![NPM](https://img.shields.io/npm/v/@blazity/nest-file-fastify.svg?style=flat-square)](https://www.npmjs.com/package/@blazity/nest-file-fastify)
@@ -7,20 +7,20 @@
 
 </div>
 
-This library adds decorators for [Nest.js](https://github.com/nestjs/nest) to support [fastify-multipart](https://github.com/fastify/fastify-multipart). The API is very similar to the official Nest.js Express file decorators.
+This library adds decorators for [Nest.js](https://github.com/nestjs/nest) to support [@fastify/multipart](https://github.com/fastify/@fastify/multipart). The API is very similar to the official Nest.js Express file decorators.
 
 ## Installation
 
 NPM
 
 ```bash
-$ npm install @blazity/nest-file-fastify fastify-multipart
+$ npm install @blazity/nest-file-fastify @fastify/multipart
 ```
 
 Yarn
 
 ```bash
-$ yarn add @blazity/nest-file-fastify fastify-multipart
+$ yarn add @blazity/nest-file-fastify @fastify/multipart
 ```
 
 ## Docs

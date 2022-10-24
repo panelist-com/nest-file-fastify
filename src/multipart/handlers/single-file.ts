@@ -9,7 +9,7 @@ import { filterUpload } from "../filter";
 export const handleMultipartSingleFile = async (
   req: FastifyRequest,
   fieldname: string,
-  options: UploadOptions,
+  options: UploadOptions | Partial<UploadOptions>,
 ) => {
   const parts = getParts(req, options);
   const body: Record<string, any> = {};

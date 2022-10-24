@@ -1,5 +1,6 @@
 import { DiskStorage, MemoryStorage, Storage } from "../storage";
 import { UploadFilterHandler } from "./filter";
+import * as busboy from "@fastify/busboy";
 
 export type UploadOptions = busboy.BusboyConfig & {
   dest?: string;
@@ -11,7 +12,9 @@ export const DEFAULT_UPLOAD_OPTIONS: Partial<UploadOptions> = {
   storage: new MemoryStorage(),
 };
 
-export const transformUploadOptions = (opts?: UploadOptions) => {
+export const transformUploadOptions = (
+  opts?: UploadOptions | Partial<UploadOptions>,
+): UploadOptions | Partial<UploadOptions> => {
   if (opts == null) return DEFAULT_UPLOAD_OPTIONS;
 
   if (opts.dest != null) {
